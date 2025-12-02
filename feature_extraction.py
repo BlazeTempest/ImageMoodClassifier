@@ -9,7 +9,7 @@ from utils import extract_all_features
 from tqdm import tqdm
 
 
-def build_feature_dataset(dataset_path='dataset', output_csv='features.csv'):
+def build_feature_dataset(dataset_path='dataset', output_csv='trainedModels/features.csv'):
     """
     Extract features from all images in dataset folders
     
@@ -90,4 +90,4 @@ if __name__ == '__main__':
     else:
         # Build feature dataset
         df = build_feature_dataset(dataset_path=dataset_path, 
-                                   output_csv='features.csv')
+                                   output_csv='trainedModels/features.csv')

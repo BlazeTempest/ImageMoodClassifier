@@ -18,10 +18,10 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp'}
 # Load models at startup
 print("Loading models...")
 try:
-    rf_model = joblib.load('mood_classifier_rf.pkl')
-    label_encoder = joblib.load('label_encoder.pkl')
-    cnn_model = keras.models.load_model('mood_classifier_cnn.h5')
-    cnn_class_names = joblib.load('cnn_class_names.pkl')
+    rf_model = joblib.load('trainedModels/mood_classifier_rf.pkl')
+    label_encoder = joblib.load('trainedModels/label_encoder.pkl')
+    cnn_model = keras.models.load_model('trainedModels/mood_classifier_cnn.h5')
+    cnn_class_names = joblib.load('trainedModels/cnn_class_names.pkl')
     print("✓ Models loaded successfully!")
 except Exception as e:
     print(f"Error loading models: {e}")

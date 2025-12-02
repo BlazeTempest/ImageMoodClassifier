@@ -10,9 +10,9 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 import joblib
 
 
-def train_ml_model(features_csv='features.csv', 
-                   model_path='mood_classifier_rf.pkl',
-                   label_encoder_path='label_encoder.pkl'):
+def train_ml_model(features_csv='trainedModels/features.csv', 
+                   model_path='trainedModels/mood_classifier_rf.pkl',
+                   label_encoder_path='trainedModels/label_encoder.pkl'):
     """
     Train Random Forest classifier on extracted features
     
@@ -95,7 +95,7 @@ def train_ml_model(features_csv='features.csv',
 if __name__ == '__main__':
     import os
     
-    if not os.path.exists('features.csv'):
+    if not os.path.exists('trainedModels/features.csv'):
         print("Error: features.csv not found!")
         print("Please run feature_extraction.py first to generate the feature dataset.")
     else:

@@ -134,7 +134,7 @@ def train_cnn_model(dataset_path='dataset', epochs=30, batch_size=32):
     
     # Callbacks
     callbacks = [
-        ModelCheckpoint('mood_classifier_cnn.h5', save_best_only=True, monitor='val_accuracy'),
+        ModelCheckpoint('trainedModels/mood_classifier_cnn.h5', save_best_only=True, monitor='val_accuracy'),
         ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=3, min_lr=1e-6, verbose=1),
         EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
     ]
@@ -148,7 +148,7 @@ def train_cnn_model(dataset_path='dataset', epochs=30, batch_size=32):
     )
     
     # Save class names
-    joblib.dump(class_names, 'cnn_class_names.pkl')
+    joblib.dump(class_names, 'trainedModels/cnn_class_names.pkl')
     
     return model, history
 
